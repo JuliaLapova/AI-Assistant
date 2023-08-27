@@ -31,9 +31,9 @@
 
 В проекте используются следующие технологии:
 
-* [![Python][python]][python-url]
-* [![Fastapi][Fastapi]][Fastapi-url]
-* [![Docker][Docker]][Docker-url]
+* Python
+* Fastapi
+* Docker
 
 
 ## Веб-интерфейс пользователя
