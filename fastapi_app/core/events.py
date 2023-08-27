@@ -2,9 +2,6 @@ from typing import Callable
 
 from fastapi import FastAPI
 from loguru import logger
-
-#from fastapi_app.core.app import AppSettings
-#from fastapi_app.core.db import close_db_connection, connect_to_db
 from core.app import AppSettings
 from core.db import close_db_connection, connect_to_db
 
