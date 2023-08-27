@@ -12,7 +12,7 @@
 Проект состоит из 2-х частей:
 
 <details>
-  <summary><b><strong>FastAPi</strong></b></summary>
+  <summary><b><strong>FastAPI</strong></b></summary>
   FastAPI приложение, которое предоставляет доступ к боту и базе знаний. 
 </details>
 
