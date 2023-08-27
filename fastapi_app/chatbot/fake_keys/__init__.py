@@ -1,4 +1,4 @@
 import openai
 
-OPENAI_API_KEY = "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"  #@param {type: "string"}
+OPENAI_API_KEY = "your_key"  #@param {type: "string"}
 openai.api_key = OPENAI_API_KEY
