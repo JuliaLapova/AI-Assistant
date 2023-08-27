@@ -9,10 +9,10 @@
 
 ## Структура проекта
 
-Проект состоит из 3-х частей:
+Проект состоит из 2-х частей:
 
 <details>
-  <summary><b><strong>АПИ</strong></b></summary>
+  <summary><b><strong>FastAPi</strong></b></summary>
   FastAPI приложение, которое предоставляет доступ к боту и базе знаний. 
 </details>
 
