@@ -1,5 +1,4 @@
 import logging
-#from fastapi_app.core.app import AppSettings
 from core.app import AppSettings
 from pydantic import Field
 
