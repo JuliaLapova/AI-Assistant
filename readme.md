@@ -166,33 +166,3 @@ OPENAI_API_KEY={your_key}
 DEBUG=True
 ```
 
-## Лицензия
-
-Распространяется под лицензией [APACHE][license-url].
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[license-shield]: https://img.shields.io/badge/License-APACHE-yellow.svg?style=for-the-badge
-[license-url]: https://github.com/CyberMaryVer/ai_assistant/blob/main/LICENSE
-[product-logo]: images/logo.jpg
-[demo-url]: http://178.170.196.101:8080/
-[product-screenshot1]: images/landing.jpg
-[product-screenshot2]: images/api.jpg
-[product-screenshot3]: images/docs.jpg
-[product-screenshot4]: images/front.jpg
-[product-schema]: images/architecture.png
-[Fastapi]: https://img.shields.io/badge/Fastapi-0.68.1-blue?style=for-the-badge
-[Fastapi-url]: https://fastapi.tiangolo.com/
-[PostgreSQL]: https://img.shields.io/badge/PostgreSQL-13.3-blue?style=for-the-badge
-[PostgreSQL-url]: https://www.postgresql.org/
-[Docker]: https://img.shields.io/badge/Docker-20.10.7-blue?style=for-the-badge
-[Docker-url]: https://www.docker.com/
-[python]: https://img.shields.io/badge/Python-3.9.6-blue?style=for-the-badge
-[python-url]: https://www.python.org/
-[github-shield]: https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white
-[github-url]: https://github.com/CyberMaryVer/ai_assistant
-[linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
-[linkedin-url]: https://www.linkedin.com/in/maria-startseva/
-[demo-url-front]: https://cybermaryver-simple-front-for-chatbot-app-0tqyzf.streamlit.app/
-
-
