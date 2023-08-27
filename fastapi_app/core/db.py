@@ -3,7 +3,6 @@ from fastapi import FastAPI, Request
 from loguru import logger
 from sqlalchemy.dialects import postgresql
 
-#from fastapi_app.core.app import AppSettings
 from core.app import AppSettings
 
 async def connect_to_db(app: FastAPI, settings: AppSettings) -> None:
@@ -16,7 +15,6 @@ async def connect_to_db(app: FastAPI, settings: AppSettings) -> None:
     )
 
     logger.info("Connection established")
-
 
 async def close_db_connection(app: FastAPI) -> None:
     logger.info("Closing connection to database")
