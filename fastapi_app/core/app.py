@@ -6,11 +6,6 @@ from typing import Any, Dict, List, Tuple
 from loguru import logger
 from pydantic import PostgresDsn, SecretStr
 
-#from fastapi_app.core.logging import InterceptHandler
-#from fastapi_app.core.base import BaseAppSettings
-#from fastapi_app.core.metadata import DESCRIPTION, TAGS_METADATA, CONTACT, LICENSE
-#from fastapi_app.config.test_config import TEST_PG_USER, TEST_PG_PASSWORD, TEST_PG_DB_NAME, TEST_PG_HOST
-
 from core.logging import InterceptHandler
 from core.base import BaseAppSettings
 #from core.metadata import DESCRIPTION, TAGS_METADATA, CONTACT, LICENSE
@@ -71,7 +66,7 @@ class AppSettings(BaseAppSettings):
             "description": self.description,
 #            "contact": self.contact,
 #            "license_info": self.license_info,
-#            "openapi_tags": self.openapi_tags,  #mine вопрос
+#            "openapi_tags": self.openapi_tags,
             "database_url": self.database_url,
 
         }
