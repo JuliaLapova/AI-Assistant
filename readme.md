@@ -17,7 +17,7 @@
   FastAPI приложение, которое предоставляет доступ к боту и базе знаний. 
     Приложение состоит из 3-х частей:
 
-* АПИ чат-бота (простой и расширенный)
+* АПИ 
 * АПИ базы знаний (добавление индексов)
 * АПИ для администрирования проекта
 
@@ -28,7 +28,7 @@
   <summary><b><strong>База знаний</strong></b></summary>
   
   В базе знаний хранятся индексы:
-  * Индекс для поиска ответов на вопросы, связанные с ТК
+  * Индекс для поиска ответов на вопросы, связанные с услугами оказываемыми СПб ГКУ «МФЦ».
 
 </details>
 
@@ -46,70 +46,15 @@
 ## Веб-интерфейс пользователя
 
 Пример интерфейса пользователя:
-
-
 <details>
-  <summary>Примечание</summary>
-  
-  В данный момент веб-интерфейс находится в разработке.
+  <summary></summary>
+ 
+[ССЫлка на веб интерфейс](http://31.129.97.70:8501/)
+
 </details>
 
 
-## Работа с API
 
-<details>
-  <summary>Интерфейс</summary>
-
-  АПИ доступно по адресу `http://localhost:8000/docs`
-
-  ![img][product-screenshot2]
-</details>
-
-<details>
-  <summary>Документация</summary>
-
-  Документация доступна по адресу `http://localhost:8000/redoc`
-  
-  ![img][product-screenshot3]
-</details>
-
-<details>
-  <summary>Примеры запросов</summary>
-
-1. HTTP запрос
-
-    ```bash
-    http://localhost:8000/api/chatbot_simple/1
-    ```
-   Параметры:
-    * `user_input` - вопрос пользователя
-    * `params` - параметры запроса
-    * `api_key` - ключ для доступа к АПИ
-
-    ```json
-    {
-      "user_input": "Что такое НДФЛ?",
-      "question": {
-        "api_key": "API_KEY"
-      }
-    }
-   ```
-2. CURL запрос
-
-    ```bash
-        curl -X 'POST' \
-          'http://localhost:8000/api/chatbot_simple/1' \
-          -H 'accept: application/json' \
-          -H 'Content-Type: application/json' \
-          -d '{
-          "user_input": "Что такое НДФЛ?",
-          "question": {
-            "api_key": "API_KEY"
-          }
-        }'
-    ```
-
-</details>
 
 ## Запуск проекта
 
