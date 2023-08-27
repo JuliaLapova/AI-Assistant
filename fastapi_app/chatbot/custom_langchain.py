@@ -10,28 +10,7 @@ BUSINESS_INDEX_PATH = "./faiss/faiss-main/"
 TK_INDEX_PATH = "./faiss/faiss-tk/"
 HR_INDEX_PATH = "./faiss/faiss-hr/"
 YT_INDEX_PATH = "./faiss/faiss-yt/"
-#MAIN_INDEX_PATH = "./faiss/faiss-main/"
 MAIN_INDEX_PATH = "../faiss/faiss-main/"
-
-
-#HR_INDEX_PATH = "/tmp/tempfile/"
-#HR_INDEX_PATH = "/tmp/"
-
-#BUSINESS_INDEX_PATH = "./../../indexes/faiss-b/" if __name__ == "__main__" else "./indexes/faiss-b/"
-#TK_INDEX_PATH = "./../../indexes/faiss-tk/" if __name__ == "__main__" else "./indexes/faiss-tk/"
-#HR_INDEX_PATH = "./../../indexes/faiss-hr/" if __name__ == "__main__" else "./indexes/faiss-hr/"
-#YT_INDEX_PATH = "./../../indexes/faiss-yt/" if __name__ == "__main__" else "./indexes/faiss-yt/"
-
-
-# print(__name__, __file__, BUSINESS_INDEX_PATH, TK_INDEX_PATH, HR_INDEX_PATH)
-
-
-#def get_faiss_index(faiss_index=None, api_key=None):
-#    index_path = TK_INDEX_PATH if faiss_index == 'tk' \
-#        else HR_INDEX_PATH if faiss_index == 'hr' \
-#        else YT_INDEX_PATH if faiss_index == 'yt' \
-#        else BUSINESS_INDEX_PATH
-#    return FAISS.load_local(folder_path=index_path, embeddings=OpenAIEmbeddings(openai_api_key=api_key))
 
 # get_faiss_index for Streamlit
 def get_faiss_index(faiss_index=None, api_key=None):
@@ -41,8 +20,6 @@ def get_faiss_index(faiss_index=None, api_key=None):
         else MAIN_INDEX_PATH if faiss_index == 'main' \
         else BUSINESS_INDEX_PATH
     return FAISS.load_local(folder_path=index_path, embeddings=OpenAIEmbeddings(openai_api_key=api_key))
-
-
 
 def get_merged_faiss_index(faiss_indexes='business+hr', api_key=None):
     indexes = faiss_indexes.split('+')
@@ -238,7 +215,6 @@ def answer_without_context(
         print("[ERROR-answer_without_context]", e)
         return ""
 
-
 def format_answer_with_openai(
         answer,
         api_key,
@@ -268,7 +244,6 @@ def format_answer_with_openai(
     except Exception as e:
         print("[ERROR-format_answer_with_openai]", e)
         return ""
-
 
 def request_openai(messages, api_key, model="gpt-3.5-turbo", max_tokens=2800, temperature=0.01):
     openai.api_key = api_key
@@ -300,29 +275,12 @@ def request_openai(messages, api_key, model="gpt-3.5-turbo", max_tokens=2800, te
         print("[ERROR-request_openai]", e)
         return ""
 
-
 if __name__ == '__main__':
     from fastapi_app.chatbot.secret import OPENAI_API_KEY
     import time
     print(OPENAI_API_KEY)
 
-    # print_openai_answer("Какова средняя стоимость часа работы дизайнера?", verbose=True, api_key=OPENAI_API_KEY)
-    # print_openai_answer("Как рассчитывается EBITDA?", verbose=False)
-    # print_openai_answer("Как рассчитать НДФЛ?", verbose=False)
-    # print_openai_answer("Можно ли уволить самозанятого?", faiss_index='tk', verbose=False, api_key=OPENAI_API_KEY)
-    # print_openai_answer("Сколько зарабатывает ML инженер?", faiss_index='business', verbose=False, api_key=OPENAI_API_KEY)
-    # print_openai_answer("Какие выплаты может получить работник при увольнении?", faiss_index='hr', verbose=False, api_key=OPENAI_API_KEY)
-
-    get_context_with_score("Как перейти на УСН?",
+  get_context_with_score("Как перейти на УСН?",
                            faiss_index='business+hr',
                            api_key=OPENAI_API_KEY,
                            verbose=True)
-    # start = time.time()
-    # print_openai_answer("Какие выплаты может получить работник при увольнении?", faiss_index='tk', verbose=False,
-    #                     api_key=OPENAI_API_KEY)
-    # print("\033[093m", time.time() - start, "\033[0m")
-
-    # start = time.time()
-    # print_openai_answer_translated("Что будет с иммигрантами из России", faiss_index='yt', api_key=OPENAI_API_KEY,
-    #                                verbose=False)
-    # print("\033[093m", time.time() - start, "\033[0m")
