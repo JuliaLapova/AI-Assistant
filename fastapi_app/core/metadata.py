@@ -1,11 +1,7 @@
 import os
 
-#from pydantic_settings import Dict, Any #mine
-
-#class AppSettings(BaseAppSettings):
-#mine и вопрос тут
 HOST = os.getenv("EXTERNAL_HOST") or "localhost:8000"
-LOGO = "https://static.vecteezy.com/system/resources/thumbnails/005/381/497/small/cute-robot-illustration-with-happy-expression-free-vector.jpg"
+LOGO = "https://drive.google.com/uc?export=view&id=1g0KmrIILmwb0Vrxt-J-n0HFvQBDhk0Lr"
 
 LOGO_HTML = f"""
 <img src="{LOGO}" width="210" height="240">
@@ -14,29 +10,17 @@ LOGO_HTML = f"""
 DESCRIPTION = f"""
 {LOGO_HTML}
 
-АПИ для работы с AI-ассистентом. Позволяет выполнять следующие операции:
+АПИ для работы с AI-ассистентом:
 
 **Для пользователей**
-* Получение списка тематик
 * Получение ответа от AI-ассистента в обычном режиме
-* Получение ответа от AI-ассистента в расширенном режиме (с контекстом)
-* Получение списка источников по тематике
 
 <details>
   <summary>**Для администраторов**</summary>
     <p>Для администраторов доступны все операции, описанные выше.</p>
     <p>Кроме того, администратор может:</p>
     <ul>
-        <li>Добавлять новые тематики</li>
-        <li>Добавлять новые ответы на вопросы</li>
-        <li>Добавлять новые источники</li>
-        <li>Добавлять новые теги</li>
         <li>Добавлять новых пользователей</li>
-        <li>Получать список пользователей</li>
-        <li>Получать список тематик</li>
-        <li>Получать список вопросов</li>
-        <li>Получать список источников</li>
-        <li>Получать список тегов</li>
     </ul>
 </details>
 
@@ -68,13 +52,3 @@ TAGS_METADATA = [
         "description": "Healthcheck endpoint. Returns 200 if the service is up and running.",
     },
 ]
-#CONTACT: Dict[str, Any] = {'name': 'AI ENGINEERS', 'url': 'http://localhost:8000', 'email': 'julialapova1983@gmail.com'}
-#CONTACT = {
-#    "name": "AI Leaders",
-#    "url": f"http://{HOST}",
-#    "email": "julialapova1983@gmail.com",
-#}
-#LICENSE = {
-#    "name": "Apache 2.0",
-#    "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
-#}
