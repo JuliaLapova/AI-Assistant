@@ -35,13 +35,13 @@ class PrettyJSONResponse(Response):
 
 
 class QuestionParams(BaseModel):
-    tada_key: str = Query('54321test', description="Tada key")
+    special_key: str = Query('54321test', description="Sppecial key")
     topic: str = Query('business', example='tk', description="Choose topic: [business, tk, hr, yt]")
     enrich_sources: bool = Query(True, description="Add links to sources (tk, yt only)")
 
 
 class QuestionParamsSimple(BaseModel):
-    tada_key: str = Query(..., description="API key")
+    Special_key: str = Query(..., description="API key")
 
 
 class DebugParams(QuestionParams):
@@ -76,7 +76,7 @@ def get_answer_with_sources(user_input, api_key, topic, translate_answer=False):
 @router.post('/chatbot_simple/{user_id}', include_in_schema=True, responses=CHAT_RESPONSES_SIMPLE)
 async def ask_chatbot(
         user_id: str,
-        user_input: str = Body('как начисляется ндфл сотруднику работающему из другой страны',
+        user_input: str = Body('Пример вопроса',
                                example="How are you?",
                                description="User text input",
                                max_length=500),
@@ -85,14 +85,14 @@ async def ask_chatbot(
     """
     API endpoint for AI assistant (simple version)
     """
-    api_key, uses_left = _get_valid_key(params.tada_key)
+    api_key, uses_left = _get_valid_key(params.special_key)
     if api_key is None:
         return PrettyJSONResponse(content={"error": "Your key is invalid or expired",
                                            "key_status": uses_left})
 
     config = {"user_id": user_id,
               "user_input": user_input,
-              "user_key": params.tada_key,
+              "user_key": params.special_key,
               }
     print("user request:", config)
     logger.info(f"user request: {config}")
@@ -114,7 +114,7 @@ async def ask_chatbot(
 @router.post('/chatbot_topic/{user_id}', include_in_schema=True, responses=CHAT_RESPONSES)
 async def ask_assistant(
         user_id: str,
-        user_input: str = Body('как начисляется ндфл сотруднику работающему из другой страны',
+        user_input: str = Body('пример вопроса',
                                example="How are you?",
                                description="User text input",
                                max_length=1500),
@@ -123,7 +123,7 @@ async def ask_assistant(
     """
     API endpoint for AI assistant (advanced version)
     """
-    api_key, uses_left = _get_valid_key(params.tada_key)
+    api_key, uses_left = _get_valid_key(params.special_key)
     if api_key is None:
         return PrettyJSONResponse(content={"error": "Your key is invalid or expired",
                                            "key_status": uses_left})
@@ -131,7 +131,7 @@ async def ask_assistant(
         "user_input": user_input,
         "topic": params.topic,
         "user_id": user_id,
-        "user_key": params.tada_key,
+        "user_key": params.special_key,
     }
     print("user request:", config)
     logger.info(f"user request: {config}")
@@ -149,8 +149,8 @@ async def ask_assistant(
 
 
 async def calling_assistant(user_input: str, topic: str = "default", enrich_sources: bool = True,
-                            tada_key: str = "ratelimit"):
-    api_key, uses_left = _get_valid_key(tada_key)
+                            special_key: str = "ratelimit"):
+    api_key, uses_left = _get_valid_key(special_key)
     if api_key is None:
         logger.warning("Превышен лимит запросов, попробуйте позже")
         raise PermissionError("Превышен лимит запросов, попробуйте позже")
@@ -167,7 +167,7 @@ async def calling_assistant(user_input: str, topic: str = "default", enrich_sour
 
 @router.post('/chatbot_stream/{user_id}', include_in_schema=False, responses=CHAT_RESPONSES)
 async def streaming_assistant(
-        user_input: str = Query('как начисляется ндфл сотруднику работающему из другой страны',
+        user_input: str = Query('Пример вопроса',
                                 example="How are you?",
                                 description="User text input",
                                 max_length=1500),
@@ -176,7 +176,7 @@ async def streaming_assistant(
 
     async def generate():
         # Looping over the response
-        context = "You an expert in the field of business, finance, law, and HR. " \
+        context = "You an expert in the field of business and law. " \
                   "You are answering questions from a client."
         task = "Answer the question. Be specific and use bullet points, return answer in Russian\n\n"
         info = f"Context: {context}\n\n---\n\nQuestion: {user_input}\nAnswer:"
