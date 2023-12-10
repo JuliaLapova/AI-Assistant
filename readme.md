@@ -1,6 +1,11 @@
 # Описание проекта
-
 Интеллектуальный консультант для сотрудников СПб ГКУ «МФЦ».
+
+
+![AI_Leaders](AI_Leaders.png)
+
+[Ссылка на презентацию]([[http://31.129.97.70:8501](https://github.com/JuliaLapova/AI-Assistant/blob/main/AI_Leaders_v4.pdf)]/)
+https://youtu.be/ZrTzaFznixo
 
 [Ссылка на короткую видеопрезентацию]([http://31.129.97.70:8501](https://youtu.be/ZrTzaFznixo)/)
 https://youtu.be/ZrTzaFznixo
